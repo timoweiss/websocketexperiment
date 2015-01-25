@@ -1,8 +1,8 @@
-var app = angular.module('websocketexperiment', ['btford.socket-io']);
+var app = angular.module('websocketexperiment', ['btford.socket-io', 'ui.router']);
 
 
 app.config(function($stateProvider, $urlRouterProvider) {
-
+    $urlRouterProvider.otherwise('/');
     $stateProvider
         .state('home', {
             url: "/",
@@ -14,6 +14,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 app.factory('socketService', function(socketFactory) {
-    console.log('hallo')
+    console.log('hallo');
     return socketFactory();
 });
