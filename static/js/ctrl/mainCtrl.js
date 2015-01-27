@@ -14,12 +14,16 @@ angular.module('websocketexperiment').controller('MainCtrl', function($scope, so
     });
     socket.on('test', function(result) {
         $scope.result = result;
-        // var rgba = 'rgba(' + Math.abs(Math.round(result.x * 10)) + ',' + Math.abs(Math.round(result.y * 10)) + ',' + Math.abs(Math.round(result.z * 10)) + ',' + 0.9 + ')';
-        // $scope.background = {
-        //     'background-color': rgba
-        // };
-        //
+
+        //setRgbaString();
     });
+
+    function setRgbaString() {
+        var rgba = 'rgba(' + Math.abs(Math.round(result.x * 10)) + ',' + Math.abs(Math.round(result.y * 10)) + ',' + Math.abs(Math.round(result.z * 10)) + ',' + 0.9 + ')';
+        $scope.background = {
+            'background-color': rgba
+        };
+    }
 
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
