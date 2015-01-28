@@ -1,7 +1,4 @@
 angular.module('websocketexperiment').controller('MainCtrl', function($scope, socketService) {
-    var opt = {
-        url: 'http://192.168.178.86:3000'
-    };
     socket = socketService;
     socket.on('newmobileclient', function() {
         console.log('new newmobileclient');
